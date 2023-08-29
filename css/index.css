@@ -1,0 +1,26 @@
+
+.carousel-item img {
+    max-height: 500px;
+    padding-right: 30px;
+    padding-left: 10px;
+}
+/* .product-image {
+    display: inline;
+    height: 50px;
+} */
+.product-image{
+    height: 275px;
+    max-width: 100%;
+    margin: 0px;
+    padding: 0px 3px;
+    text-align: center;
+}
+@media (max-width: 768px){
+    .product-image{
+        height: 150px;
+        max-width: 35%;
+        margin: 0px;
+        padding: 0px 3px;
+        text-align: center;
+    }
+}
