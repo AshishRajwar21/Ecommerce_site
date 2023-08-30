@@ -80,13 +80,15 @@
     height: 50px;
 } */
 .product-container {
-    border: solid grey 2px;
-    border-radius: 5px;
+    /* border: solid grey 2px; */
+    /* border-radius: 5px; */
     padding: 5px 10px;
     margin: 10px 10px;
 }
 .product-title {
     padding: 5px 10px;
+    background: #28a745;
+    color: white;
 }
 .product-name a{
     text-decoration: none;
