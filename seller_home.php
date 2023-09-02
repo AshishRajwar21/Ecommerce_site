@@ -60,7 +60,7 @@ $seller_id = $_SESSION['seller_id'];
                                 </div>                            
                             </div>
                             <?php
-                            $categories = array("clothings","sports","groceries");
+                            $categories = array("clothings","musics","sports","kitchens","travels","gardens","electricals","toys","groceries","pet_cares");
                             foreach ($categories as $category){
                                 $sql1 = "SELECT * from $category where seller_id='$seller_id' and id<=20";
                                 $result1 = mysqli_query($conn,$sql1);
