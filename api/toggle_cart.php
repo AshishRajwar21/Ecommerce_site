@@ -13,7 +13,7 @@ $product_id = $_POST["product_id"];
 $table = $_POST["item"];
 $quantity = $_POST["quantity"];
 
-$sql_1 = "SELECT * FROM cart WHERE product_id = '$product_id' and item = '$table'";
+$sql_1 = "SELECT * FROM cart WHERE user_id='$user_id' and product_id = '$product_id' and item = '$table'";
 $result_1 = mysqli_query($conn, $sql_1);
 if (!$result_1) {
     echo json_encode(array("success" => false, "message" => "Something went wrong"));
@@ -21,7 +21,7 @@ if (!$result_1) {
 }
 
 if (mysqli_num_rows($result_1) > 0) {
-    $sql_2 = "DELETE FROM cart WHERE product_id = '$product_id' and item = '$table'";
+    $sql_2 = "DELETE FROM cart WHERE user_id='$user_id' and product_id = '$product_id' and item = '$table'";
     $result_2 = mysqli_query($conn, $sql_2);
     if (!$result_2) {
         echo json_encode(array("success" => false, "message" => "Something went wrong"));
@@ -31,7 +31,7 @@ if (mysqli_num_rows($result_1) > 0) {
         return;
     }
 } else {
-    $sql_3 = "INSERT INTO cart (product_id,item,quantity) VALUES ('$product_id', '$table','$quantity')";
+    $sql_3 = "INSERT INTO cart (user_id,product_id,item,quantity) VALUES ('$user_id','$product_id', '$table','$quantity')";
     $result_3 = mysqli_query($conn, $sql_3);
     if (!$result_3) {
         echo json_encode(array("success" => false, "message" => "Something went wrong"));

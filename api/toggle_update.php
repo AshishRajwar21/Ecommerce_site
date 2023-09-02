@@ -14,7 +14,7 @@ $table = $_POST["item"];
 $quantity = $_POST["quantity"];
 
 
-$sql_1 = "UPDATE cart set quantity=$quantity WHERE item='$table' AND product_id = '$product_id'";
+$sql_1 = "UPDATE cart set quantity=$quantity WHERE user_id='$user_id' and item='$table' AND product_id = '$product_id'";
 $result_1 = mysqli_query($conn, $sql_1);
 if (!$result_1) {
     echo json_encode(array("success" => false, "message" => "Something went wrong"));
