@@ -5,9 +5,8 @@ require "includes/db_connect.php";
 
 $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : NULL;
 
-$table = "cart_".$user_id;
 
-$sql1 = "SELECT * FROM $table";
+$sql1 = "SELECT * FROM cart where user_id='$user_id'";
 $result1 = mysqli_query($conn,$sql1);
 if (!$result1) {
     echo "Something went wrong";
