@@ -34,9 +34,8 @@ if ($user_id==NULL){
     $is_cart=false;
 }
 else{
-$table3 = "cart_".$user_id;
 
-$sql3 = "SELECT * FROM $table3 WHERE product_id = '$product_id' and item = '$table'";
+$sql3 = "SELECT * FROM cart WHERE user_id='$user_id' and product_id = '$product_id' and item = '$table'";
 $result3 = mysqli_query($conn,$sql3);
 if (!$result3) {
     echo "Something went wrong";
