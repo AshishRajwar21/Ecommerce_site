@@ -91,6 +91,7 @@ $products2 = mysqli_fetch_all($result2,MYSQLI_ASSOC);
                     <div class="product-title"><h3>Product for you</h3></div>
                     <div class="product-card-container">
                         <?php
+                        $table = "clothings";
                         $table2 = "clothings_testimonials";
                         foreach ($products1 as $product){
                             // $table2 = $table."_testimonials";
@@ -234,6 +235,7 @@ $products2 = mysqli_fetch_all($result2,MYSQLI_ASSOC);
                     <div class="product-title"><h3>Deal of the day</h3></div>
                     <div class="product-card-container">
                         <?php
+                        $table = "groceries";
                         $table2 = "groceries_testimonials";
                         foreach ($products2 as $product){
                             // $table2 = $table."_testimonials";
