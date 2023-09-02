@@ -67,7 +67,15 @@ $cart_products = mysqli_fetch_all($result1,MYSQLI_ASSOC);
                         $total_item++;
                         $total_raw_price += $product_quantity*$product['raw_price'];
                         $total_discounted_price += $product_quantity*$product['current_price'];
-                        
+                        $seller_id = $product['seller_id'];
+                        $sql3 = "select * from sellers where id='$seller_id'";
+                        $result3 = mysqli_query($conn,$sql3);
+                        if (!$result3){
+                            echo "Something went wrong.";
+                            return ;
+                        }
+                        $seller = mysqli_fetch_assoc($result3);
+                        $shop_name = $seller['shop_name'];
                         ?>
                         <div class="cart-item-container product-id-<?= $product_id ?>-item-<?= $table ?> row">
                             <div class="image-container">
@@ -92,7 +100,7 @@ $cart_products = mysqli_fetch_all($result1,MYSQLI_ASSOC);
                                 </div>
                                 <div class="product-detail-container">
                                     <div class="seller-container">
-                                        Seller : LA WELLNESS
+                                        Seller : <?= $shop_name ?>
                                     </div>
                                     <div class="price-applied-container">
                                         <span class="discounted-price">Rs. <span id="discounted-price-<?=$product_id ?>-<?= $table ?>"><?= $product_quantity*$product['current_price'] ?></span></span>
