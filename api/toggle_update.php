@@ -12,9 +12,9 @@ $user_id = $_SESSION['user_id'];
 $product_id = $_POST["product_id"];
 $table = $_POST["item"];
 $quantity = $_POST["quantity"];
-$table2 = "cart_".$user_id;
 
-$sql_1 = "UPDATE $table2 set quantity=$quantity WHERE item='$table' AND product_id = '$product_id'";
+
+$sql_1 = "UPDATE cart set quantity=$quantity WHERE item='$table' AND product_id = '$product_id'";
 $result_1 = mysqli_query($conn, $sql_1);
 if (!$result_1) {
     echo json_encode(array("success" => false, "message" => "Something went wrong"));
