@@ -90,7 +90,7 @@ if (mysqli_num_rows($result3) > 0){
                 <?php
                 if ($is_cart==false){
                     ?>
-                    <input type="number" class="quantity" value="1" min="1" max="5" name="quantity" placeholder="Quantity" required>
+                    <input type="number" class="quantity" value="1" min="1" max="5" name="quantity" required>
                     <?php
                 }
                 ?>
