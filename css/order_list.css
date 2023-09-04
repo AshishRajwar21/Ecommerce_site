@@ -40,6 +40,10 @@
     border-radius: 50%;
     padding: 5px;
 }
+.product-container h1 {
+    background: #28a745;
+    color: white;
+}
 
 .people-review-container {
     border: solid 5px rgb(243, 241, 241);
