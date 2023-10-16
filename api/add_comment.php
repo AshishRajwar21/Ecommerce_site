@@ -11,7 +11,7 @@ if (!isset($_SESSION['user_id'])) {
 $user_id = $_SESSION['user_id'];
 $product_id = $_POST["product_id"];
 $table = $_POST["item"];
-$review_date = "25-07-2023";
+$review_date = date("d-m-y");
 $rating = $_POST['rating'];
 $review_comment = $_POST["comment_area"];
 $table2 = $table."_testimonials";
